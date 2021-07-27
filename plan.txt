@@ -1,0 +1,82 @@
+
+*How to run project
+1. Running laravel-mix : run "yarn dev" on terminal 1
+2.run "yarn watch" on terminal 2
+3. go to localhost:3300
+
+* Express-js
+It is a framework for Node Application for routing and request related activities
+
+*public Folder
+it will contain all public assets like css file , js files our images which are opened on Client side
+
+*resources Folder
+contains our views templates , sas files,uncompiled  js files 
+
+*views Folder
+contains Html code of all pages
+
+*routes Folder
+routes are used to handle url
+
+*Express Server - create server.js file
+For Running Up ou Bomepage
+
+*dev Dependencies
+these are used only hwen we are crreating our projects not
+while production  begins
+
+*nodemon
+shows realtime chages in port number or server
+
+*Error: Cannot GET/ : means route is not specified which url to open
+
+*Ejs helps in embedding the server variables in our html code thats y we use its
+ejs template engine
+
+*_variable.scss
+Naming covention "_xyz" that it is not a main file but a partial file and we need it to include in other file
+
+*web.js
+This file contains all the routes we are using in our project
+It also contains post method of routes which contains logic of the route webpage as the logic
+may be very big we move them into controllers
+
+*mongoose module
+it is required to interact with our js Application
+
+*Db model  
+creating menu model a=for which db name is alwasys plural i.e. menus
+Menus.find() -- to fetch alldata from DB
+
+*ways to fetch data from Db
+1. Method 1--
+     Menu.find().then(function(pizzas){
+                //received array of objects pizzas from Db
+                console.log(pizzas)
+                return response.render('home',{pizzas: pizzas})
+            })
+
+2. Using async await
+    async index(request, response){
+
+            const pizzas = await Menu.find()
+            console.log(pizzas)
+            return response.render('home',{pizzas: pizzas})
+            
+        }
+
+*.env file 
+it is a good practice to store variables which contains private information in seperate file
+so dot env package is used
+
+*Sessions part 6
+MongoDbStore.create({mongoUrl: url, collection: 'sessions'}), // New Syntax
+
+*IN express js it doesn't know which type of data is received json or url encoded data or
+    form data so we have to explicitly tell express.js
+    app.use(express.urlencoded({extended: false}))
+
+*passport.authenticate returns a function strange
+
+*passport Config must be after session config in server.js file
